@@ -1,0 +1,127 @@
+/**
+ * Extend-only classes
+ */
+%vertical-rhythm {
+     margin-bottom: $spacing-unit / 2;
+}
+
+%snippet {
+    border-radius: 3px;
+    font-size:     15px;
+    border: 1px solid $color-medium-grey;
+}
+
+%clearfix {
+    &:after {
+        content: "";
+        display: table;
+        clear:   both;
+    }
+}
+
+/**
+* Standardise tags
+*/
+body {
+    font-family: $base-font-family;
+    font-size:   $base-font-size;
+    line-height: $base-line-height;
+    font-weight: 300;
+
+    -webkit-text-size-adjust: 100%;
+    background-color: $color-green;
+
+    > * {
+        background: #ffffff;
+    }
+
+    img {
+        max-width: 100%;
+        vertical-align: middle;
+    }
+
+    ul, ol {
+        margin-left: $spacing-unit;
+        > ul, > ol {
+            margin-bottom: 0px;
+        }
+    }
+
+    a {
+        text-decoration: none;
+        &:visited {
+
+        }
+
+        &:hover {
+            text-decoration: none;
+        }
+    }
+
+    p, blockquote, pre, ul, ol {
+        @extend %vertical-rhythm;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        @extend %vertical-rhythm;
+        font-family: $header-font-family;
+        font-weight: 300;
+    }
+
+    blockquote {
+        border-left:  4px solid $color-medium-grey;
+        padding-left: $spacing-unit / 2;
+
+        letter-spacing: -1px;
+
+        font-style: italic;
+        font-size:  18px;
+        > :last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    code {
+        @extend %snippet;
+        padding: 1px 5px;
+    }
+
+    pre {
+        @extend %snippet;
+
+        padding:    8px 12px;
+        overflow-x: scroll;
+        > code {
+            border: 0px;
+            padding-right: 0px;
+            padding-left:  0px;
+        }
+    }
+}
+
+/**
+ * Helpers
+ */
+.wrapper {
+    @extend %clearfix;
+
+    max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit} * 2));
+    max-width:         calc(#{$content-width} - (#{$spacing-unit} * 2));
+
+    margin-right:  auto;
+    margin-left:   auto;
+    padding-right: $spacing-unit;
+    padding-left:  $spacing-unit;
+}
+
+.icon {
+    > svg {
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        vertical-align: middle;
+        path {
+            fill: $color-black;
+        }
+    }
+}

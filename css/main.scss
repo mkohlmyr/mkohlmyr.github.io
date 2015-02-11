@@ -1,0 +1,28 @@
+---
+# Main sass file. Further partials imported below from _sass directory.
+---
+@charset "utf-8";
+
+$base-font-family: Helvetica, Arial, sans-serif;
+$base-font-size:   16px;
+$small-font-size:  $base-font-size * 0.875;
+$tiny-font-size:   $base-font-size * 0.75;
+$base-line-height: 1.5;
+
+$header-font-family:    'Droid Serif', serif;
+$color-white:           #ffffff;
+$color-black:           #000000;
+$color-dark-grey:       #181818;
+$color-medium-grey:     #585858;
+$color-light-grey:      #b8b8b8;
+$color-lighter-grey:    #e8e8e8;
+$color-red:             #ab4642;
+$color-yellow:          #f7ca88;
+$color-green:           #00cb91;
+$color-dark-green:      #00533b;
+$color-blue:            #0080d2;
+$color-pink:            #ff0080;
+$spacing-unit:          30px;
+$content-width:         800px;
+
+@import "reset", "base", "layout", "syntax-highlighting";

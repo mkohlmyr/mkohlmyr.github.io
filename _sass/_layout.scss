@@ -1,0 +1,106 @@
+.site-header {
+    min-height: 56px;
+
+    .page-header {
+        color: $color-blue;
+
+        font-family: $header-font-family;
+        font-size:   1.5em;
+        a.university-name {
+            color: $color-green;
+            &:hover {
+                color: $color-black;
+            }
+        }
+        a.company-name {
+            color: $color-pink;
+            &:hover {
+                color: $color-black
+            }
+        }
+    }
+}
+
+.page-content {
+    padding: $spacing-unit 0;
+
+    .post-list {
+        margin-left: 0px;
+        list-style: none;
+        > li {
+            margin-bottom: $spacing-unit;
+
+            h2 {
+                margin-bottom: 0px;
+                a.post-link {
+                    line-height: 0.75em;
+                    font-size:   24px;
+                    display:     block;
+                }
+            }
+
+            .post-meta {
+                font-size: $tiny-font-size;
+            }
+        }
+    }
+}
+
+.site-footer {
+    //border-top: 1px solid $color-light-grey;
+    padding: $spacing-unit 0;
+    background-color: inherit;
+
+    .footer-col-wrapper {
+        font-size: 15px;
+        margin-left: -$spacing-unit / 2;
+        @extend %clearfix;
+
+        .footer-col {
+            float: left;
+            margin-bottom: $spacing-unit / 2;
+            padding-left: $spacing-unit / 2;
+
+            .contact-list, .social-media-list {
+                margin-left: 0px;
+                color: $color-dark-green;
+            }
+
+            .social-media-list {
+                text-align: right;
+            }
+        }
+    }
+
+}
+
+.footer-col-1, .footer-col-2 {
+    width: -webkit-calc(50% - (#{$spacing-unit} / 2));
+    width:         calc(50% - (#{$spacing-unit} / 2));
+}
+
+.post-header {
+    margin-bottom: $spacing-unit;
+}
+
+.post-title {
+    font-size: 42px;
+    letter-spacing: -1px;
+    line-height: 1;
+}
+
+.post-content {
+    margin-bottom: $spacing-unit;
+
+    h2 {
+        font-size: 32px;
+    }
+
+    h3 {
+        font-size: 26px;
+    }
+
+    h4 {
+        font-size: 20px;
+    }
+}

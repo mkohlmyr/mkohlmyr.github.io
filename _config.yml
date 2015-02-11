@@ -1,0 +1,19 @@
+# Site settings
+title: mkohlmyr.com
+email: mikael@kohlmyr.com
+description: > # this means to ignore newlines until "baseurl:"
+  Blog
+baseurl: ""
+
+# Links and social
+url: "http://mkohlmyr.com"
+twitter_username: mkohlmyr
+github_username:  kmyr
+
+# Build settings
+markdown: kramdown
+
+# Jekyll settings
+permalink: pretty
+paginate: 10
+paginate_path: "archive/:num/"
