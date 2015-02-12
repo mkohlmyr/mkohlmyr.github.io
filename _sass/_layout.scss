@@ -30,12 +30,20 @@
         > li {
             margin-bottom: $spacing-unit;
 
-            h2 {
+            h2.post-title {
                 margin-bottom: 0px;
+
                 a.post-link {
-                    line-height: 0.75em;
-                    font-size:   24px;
-                    display:     block;
+                    font-size: 38px;
+                    line-height: 1.3em;
+                    font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
+                    font-weight: bold;
+                    display: inline;
+                    color: $color-medium-grey;
+                    word-wrap: break-word;
+                    &:hover {
+                        color: $color-black;
+                    }
                 }
             }
 
@@ -46,21 +54,25 @@
     }
 }
 
+.col-wrapper {
+    margin-left: -$spacing-unit / 2;
+    @extend %clearfix;
+}
+%col-element {
+    float: left;
+    margin-bottom: $spacing-unit / 2;
+    padding-left: $spacing-unit / 2;
+}
+
 .site-footer {
     //border-top: 1px solid $color-light-grey;
     padding: $spacing-unit 0;
     background-color: inherit;
 
-    .footer-col-wrapper {
+    .footer-cols.col-wrapper {
         font-size: 15px;
-        margin-left: -$spacing-unit / 2;
-        @extend %clearfix;
 
-        .footer-col {
-            float: left;
-            margin-bottom: $spacing-unit / 2;
-            padding-left: $spacing-unit / 2;
-
+        .content-col-half {
             .contact-list, .social-media-list {
                 margin-left: 0px;
                 color: $color-dark-green;
@@ -74,7 +86,8 @@
 
 }
 
-.footer-col-1, .footer-col-2 {
+.content-col-half {
+    @extend %col-element;
     width: -webkit-calc(50% - (#{$spacing-unit} / 2));
     width:         calc(50% - (#{$spacing-unit} / 2));
 }
