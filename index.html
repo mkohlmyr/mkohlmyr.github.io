@@ -1,167 +1,189 @@
 <html>
-<head>
-<style type="text/less">
-.reset-box()  { margin: 0px; padding: 0px; border: 0px; }
-.reset-font() { font-size: 100%; font: inherit; vertical-align: baseline; }
-.info-font(@color)  { font-size: 0.45em; font-family: sans-serif; text-transform: uppercase; color: @color;}
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <style type="text/less">
+        .reset-box()  { margin: 0px; padding: 0px; border: 0px; }
+        .reset-font() { font-size: 100%; font: inherit; vertical-align: baseline; }
+        .info-font(@color)  { font-size: 0.45em; font-family: sans-serif; text-transform: uppercase; color: @color;}
 
-html, body, div, img, blockquote      { .reset-box(); .reset-font(); }
-span, p, h1, h2, h3, a, b, u, i, code { .reset-box(); .reset-font(); }
+        html, body, div, img, blockquote      { .reset-box(); .reset-font(); }
+        span, p, h1, h2, h3, a, b, u, i, code { .reset-box(); .reset-font(); }
 
-@green: #00cb91;
-@white: #ffffff;
-@blue: #0080d2;
-@red: #ff0080;
+        @green: #00cb91;
+        @white: #ffffff;
+        @blue: #0080d2;
+        @red: #ff0080;
 
-@black: #000000;
-@grey1: #959595;
-@grey2: #d2d2d2;
+        @black: #000000;
+        @grey1: #959595;
+        @grey2: #d2d2d2;
 
-@background: @green;
-@font: "Droid Serif", serif;
+        @background: @green;
+        @font: "Droid Serif", serif;
 
-body { background: @background; font-family: @font; }
+        body { background: @background; font-family: @font; }
 
-#site-content  {
-    background: @white;
-    color: @blue;
-}
-
-#site-footer {
-    min-height: 128px;
-    color: @white;
-
-    a.icon {
-        margin-right: 16px;
-        display: block;
-        float: left;
-        svg {
-            fill: #ffffff;
-            &:hover { fill: #000000; }
+        #site-content  {
+            background: @white;
+            color: @blue;
         }
-    }
-}
 
-.content-block { padding: 24px 0px; }
+        #site-footer {
+            min-height: 128px;
+            color: @white;
 
-p { margin: 16px 0px; font-size: 1.5em; }
-span.meta { .info-font(@grey1); }
-
-hr {
-    border: 1px solid @grey2;
-    border-top: 0px;
-}
-
-a.link {
-    text-decoration: none;
-    &.green { color: @green; }
-    &.blue  { color: @blue; }
-    &.red   { color: @red; }
-    &:hover { color: @black; }
-}
-
-.wrapper { margin-right: auto; margin-left: auto; }
-
-@media (min-width: 360px) { .wrapper { width: 332px; } }
-@media (min-width: 480px) { .wrapper { width: 452px; } }
-@media (min-width: 640px) { .wrapper { width: 612px; } }
-@media (min-width: 768px) { .wrapper { width: 740px; } }
-
-</style>
-<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Droid+Serif" />
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/react-with-addons.min.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/JSXTransformer.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/less.js/2.5.1/less.min.js"></script>
-</head>
-<body>
-    <div id="site-content" class="content-block">
-
-    </div>
-    <div id="site-footer" class="content-block">
-
-    </div>
-    <script type="text/jsx">
-        var Icon = React.createClass({
-            render: function () {
-                var dimensions = {width: "32px", height: "32px"}
-                var paths = this.props.paths.map(function (item) {
-                    return <path d={item} />
-                });
-                return (
-                <a href={this.props.href} className="icon">
-                    <svg viewBox={this.props.viewbox} style={dimensions}>
-                        {paths}
-                    </svg>
-                </a>
-                );
+            a.icon {
+                margin-right: 16px;
+                display: block;
+                float: left;
+                svg {
+                    fill: #ffffff;
+                    &:hover { fill: #000000; }
+                }
             }
-        });
+        }
 
-        var Bullet = React.createClass({
-            render: function () {
-                return <p className="bullet">{this.props.content}</p>
-            }
-        });
+        .content-block { padding: 24px 0px; }
 
-        var university = [
-        "Mikael K\u00f6hlmyr, BSc Computer Science from the ",
-        <a href="http://www.southampton.ac.uk/" className="link green">University of Southampton</a>,
-        "."
-        ];
+        p { margin: 16px 0px; font-size: 1.5em; }
+        span.meta { .info-font(@grey1); }
 
-        var freshrelevance = [
-        "Software developer at ",
-        <a href="http://www.freshrelevance.com/" className="link red">Fresh Relevance</a>,
-        " building third party integrations. ",
-        <span className="meta">june 2013 to august 2015 southampton, uk</span>
-        ];
+        hr {
+            border: 1px solid @grey2;
+            border-top: 0px;
+        }
 
-        var mancrates = [
-        "Full-stack developer at ",
-        <a href="http://www.mancrates.com/" className="link red">Man Crates</a>,
-        " through the ",
-        <a href="http://www.siliconvalleyinternship.com/" className="link green">Silicon Valley Internship Programme</a>,
-        ". ",
-        <span className="meta">august 2015 to present redwood city, ca</span>
-        ];
+        a.link {
+            text-decoration: none;
+            &.green { color: @green; }
+            &.blue  { color: @blue; }
+            &.red   { color: @red; }
+            &:hover { color: @black; }
+        }
+
+        .wrapper { margin-right: auto; margin-left: auto; }
+
+        @media (min-width: 360px) { .wrapper { width: 332px; } }
+        @media (min-width: 480px) { .wrapper { width: 452px; } }
+        @media (min-width: 640px) { .wrapper { width: 612px; } }
+        @media (min-width: 768px) { .wrapper { width: 740px; } }
+
+    </style>
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Droid+Serif" />
+    <script type="text/javascript" src="https://cdn.rawgit.com/jashkenas/coffeescript/master/extras/coffee-script.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/react-with-addons.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/JSXTransformer.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/less.js/2.5.1/less.min.js"></script>
+    </head>
+    <body>
+        <div id="site-content" class="content-block">
+
+        </div>
+        <div id="site-footer" class="content-block">
+
+        </div>
+        <script type="text/coffeescript">
+            class Song
+            @base_url: "https://w.soundcloud.com/player/?"
+            @defaults =
+            show_user: true
+            auto_play: false
+            hide_related: true
+            show_reposts: false
+            show_comments: false
+
+            constructor: (track, options) ->
+            @options = jQuery.extend Song.defaults, options or {}
+            @options.url = track
+            @options.visual = true
+
+            getEmbedUrl: () ->
+            return Song.base_url + jQuery.param @options
+            window.Song = Song
+        </script>
+        <script type="text/jsx">
+            var Icon = React.createClass({
+                render: function () {
+                    var dimensions = {width: "32px", height: "32px"}
+                    var paths = this.props.paths.map(function (item) {
+                        return <path d={item} />
+                    });
+                    return (
+                    <a href={this.props.href} className="icon">
+                        <svg viewBox={this.props.viewbox} style={dimensions}>
+                            {paths}
+                        </svg>
+                    </a>
+                    );
+                }
+            });
+
+            var Bullet = React.createClass({
+                render: function () {
+                    return <p className="bullet">{this.props.content}</p>
+                }
+            });
+
+            var university = [
+                "Mikael K\u00f6hlmyr, BSc Computer Science from the ",
+                <a href="http://www.southampton.ac.uk/" className="link green">University of Southampton</a>,
+                "."
+            ];
+
+            var freshrelevance = [
+                "Software developer at ",
+                <a href="http://www.freshrelevance.com/" className="link red">Fresh Relevance</a>,
+                " building third party integrations. ",
+                <span className="meta">june 2013 to august 2015 southampton, uk</span>
+            ];
+
+            var mancrates = [
+                "Full-stack developer at ",
+                <a href="http://www.mancrates.com/" className="link red">Man Crates</a>,
+                " through the ",
+                <a href="http://www.siliconvalleyinternship.com/" className="link green">Silicon Valley Internship Programme</a>,
+                ". ",
+                <span className="meta">august 2015 to present redwood city, ca</span>
+            ];
 
 
 
-        var Main = React.createClass({
-            render: function () {
-                return (
-                <div id="site-content-main" className="wrapper">
-                    <Bullet content={university}/>
-                    <hr/>
-                    <Bullet content={freshrelevance}/>
-                    <Bullet content={mancrates}/>
-                </div>
-                );
-            }
-        });
+            var Main = React.createClass({
+                render: function () {
+                    return (
+                    <div id="site-content-main" className="wrapper">
+                        <Bullet content={university}/>
+                        <hr/>
+                        <Bullet content={freshrelevance}/>
+                        <Bullet content={mancrates}/>
+                    </div>
+                    );
+                }
+            });
 
-        var Footer = React.createClass({
-            render: function () {
-                var paths = {
-                    github: ["M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"],
-                    twitter: ["M24.826,0C11.137,0,0,11.137,0,24.826c0,13.688,11.137,24.826,24.826,24.826c13.688,0,24.826-11.138,24.826-24.826    C49.652,11.137,38.516,0,24.826,0z M35.901,19.144c0.011,0.246,0.017,0.494,0.017,0.742c0,7.551-5.746,16.255-16.259,16.255    c-3.227,0-6.231-0.943-8.759-2.565c0.447,0.053,0.902,0.08,1.363,0.08c2.678,0,5.141-0.914,7.097-2.446    c-2.5-0.046-4.611-1.698-5.338-3.969c0.348,0.066,0.707,0.103,1.074,0.103c0.521,0,1.027-0.068,1.506-0.199    c-2.614-0.524-4.583-2.833-4.583-5.603c0-0.024,0-0.049,0.001-0.072c0.77,0.427,1.651,0.685,2.587,0.714    c-1.532-1.023-2.541-2.773-2.541-4.755c0-1.048,0.281-2.03,0.773-2.874c2.817,3.458,7.029,5.732,11.777,5.972    c-0.098-0.419-0.147-0.854-0.147-1.303c0-3.155,2.558-5.714,5.713-5.714c1.644,0,3.127,0.694,4.171,1.804    c1.303-0.256,2.523-0.73,3.63-1.387c-0.43,1.335-1.333,2.454-2.516,3.162c1.157-0.138,2.261-0.444,3.282-0.899    C37.987,17.334,37.018,18.341,35.901,19.144z"],
-                    instagram: ["M24.825,29.796c2.739,0,4.972-2.229,4.972-4.97c0-1.082-0.354-2.081-0.94-2.897c-0.903-1.252-2.371-2.073-4.029-2.073     c-1.659,0-3.126,0.82-4.031,2.072c-0.588,0.816-0.939,1.815-0.94,2.897C19.854,27.566,22.085,29.796,24.825,29.796z",
-                    "M24.826,0C11.137,0,0,11.137,0,24.826c0,13.688,11.137,24.826,24.826,24.826c13.688,0,24.826-11.138,24.826-24.826     C49.652,11.137,38.516,0,24.826,0z M38.945,21.929v11.56c0,3.011-2.448,5.458-5.457,5.458H16.164     c-3.01,0-5.457-2.447-5.457-5.458v-11.56v-5.764c0-3.01,2.447-5.457,5.457-5.457h17.323c3.01,0,5.458,2.447,5.458,5.457V21.929z",
-                    "M32.549,24.826c0,4.257-3.464,7.723-7.723,7.723c-4.259,0-7.722-3.466-7.722-7.723c0-1.024,0.204-2.003,0.568-2.897     h-4.215v11.56c0,1.494,1.213,2.704,2.706,2.704h17.323c1.491,0,2.706-1.21,2.706-2.704v-11.56h-4.217     C32.342,22.823,32.549,23.802,32.549,24.826z"]
-                };
-                return (
-                <div className="wrapper">
-                    <Icon href="https://github.com/mkohlmyr" viewbox="0 0 16 16" paths={paths.github} />
-                    <Icon href="https://twitter.com/mkohlmyr" viewbox="0 0 49.652 49.652" paths={paths.twitter} />
-                    <Icon href="https://instagram.com/mkohlmyr" viewbox="0 0 49.652 49.652" paths={paths.instagram} />
-                </div>
-                );
-            }
-        });
+            var Footer = React.createClass({
+                render: function () {
+                    var paths = {
+                        github: ["M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"],
+                        twitter: ["M24.826,0C11.137,0,0,11.137,0,24.826c0,13.688,11.137,24.826,24.826,24.826c13.688,0,24.826-11.138,24.826-24.826    C49.652,11.137,38.516,0,24.826,0z M35.901,19.144c0.011,0.246,0.017,0.494,0.017,0.742c0,7.551-5.746,16.255-16.259,16.255    c-3.227,0-6.231-0.943-8.759-2.565c0.447,0.053,0.902,0.08,1.363,0.08c2.678,0,5.141-0.914,7.097-2.446    c-2.5-0.046-4.611-1.698-5.338-3.969c0.348,0.066,0.707,0.103,1.074,0.103c0.521,0,1.027-0.068,1.506-0.199    c-2.614-0.524-4.583-2.833-4.583-5.603c0-0.024,0-0.049,0.001-0.072c0.77,0.427,1.651,0.685,2.587,0.714    c-1.532-1.023-2.541-2.773-2.541-4.755c0-1.048,0.281-2.03,0.773-2.874c2.817,3.458,7.029,5.732,11.777,5.972    c-0.098-0.419-0.147-0.854-0.147-1.303c0-3.155,2.558-5.714,5.713-5.714c1.644,0,3.127,0.694,4.171,1.804    c1.303-0.256,2.523-0.73,3.63-1.387c-0.43,1.335-1.333,2.454-2.516,3.162c1.157-0.138,2.261-0.444,3.282-0.899    C37.987,17.334,37.018,18.341,35.901,19.144z"],
+                        instagram: ["M24.825,29.796c2.739,0,4.972-2.229,4.972-4.97c0-1.082-0.354-2.081-0.94-2.897c-0.903-1.252-2.371-2.073-4.029-2.073     c-1.659,0-3.126,0.82-4.031,2.072c-0.588,0.816-0.939,1.815-0.94,2.897C19.854,27.566,22.085,29.796,24.825,29.796z",
+                                    "M24.826,0C11.137,0,0,11.137,0,24.826c0,13.688,11.137,24.826,24.826,24.826c13.688,0,24.826-11.138,24.826-24.826     C49.652,11.137,38.516,0,24.826,0z M38.945,21.929v11.56c0,3.011-2.448,5.458-5.457,5.458H16.164     c-3.01,0-5.457-2.447-5.457-5.458v-11.56v-5.764c0-3.01,2.447-5.457,5.457-5.457h17.323c3.01,0,5.458,2.447,5.458,5.457V21.929z",
+                                    "M32.549,24.826c0,4.257-3.464,7.723-7.723,7.723c-4.259,0-7.722-3.466-7.722-7.723c0-1.024,0.204-2.003,0.568-2.897     h-4.215v11.56c0,1.494,1.213,2.704,2.706,2.704h17.323c1.491,0,2.706-1.21,2.706-2.704v-11.56h-4.217     C32.342,22.823,32.549,23.802,32.549,24.826z"]
+                    };
+                    return (
+                    <div className="wrapper">
+                        <Icon href="https://github.com/mkohlmyr" viewbox="0 0 16 16" paths={paths.github} />
+                        <Icon href="https://twitter.com/mkohlmyr" viewbox="0 0 49.652 49.652" paths={paths.twitter} />
+                        <Icon href="https://instagram.com/mkohlmyr" viewbox="0 0 49.652 49.652" paths={paths.instagram} />
+                    </div>
+                    );
+                }
+            });
 
-        React.render(<Main />, document.getElementById("site-content"));
-        React.render(<Footer />, document.getElementById("site-footer"))
+            React.render(<Main />, document.getElementById("site-content"));
+            React.render(<Footer />, document.getElementById("site-footer"))
 
-    </script>
-</body>
+        </script>
+    </body>
 </html>
