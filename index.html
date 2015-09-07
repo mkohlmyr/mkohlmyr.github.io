@@ -2,79 +2,79 @@
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <style type="text/less">
-        .reset-box()  { margin: 0px; padding: 0px; border: 0px; }
-        .reset-font() { font-size: 100%; font: inherit; vertical-align: baseline; }
-        .info-font(@color)  { font-size: 0.45em; font-family: sans-serif; text-transform: uppercase; color: @color;}
+            .reset-box()  { margin: 0px; padding: 0px; border: 0px; }
+            .reset-font() { font-size: 100%; font: inherit; vertical-align: baseline; }
+            .info-font(@color)  { font-size: 0.45em; font-family: sans-serif; text-transform: uppercase; color: @color;}
 
-        html, body, div, img, blockquote      { .reset-box(); .reset-font(); }
-        span, p, h1, h2, h3, a, b, u, i, code { .reset-box(); .reset-font(); }
+            html, body, div, img, blockquote      { .reset-box(); .reset-font(); }
+            span, p, h1, h2, h3, a, b, u, i, code { .reset-box(); .reset-font(); }
 
-        @green: #00cb91;
-        @white: #ffffff;
-        @blue: #0080d2;
-        @red: #ff0080;
+            @green: #00cb91;
+            @white: #ffffff;
+            @blue: #0080d2;
+            @red: #ff0080;
 
-        @black: #000000;
-        @grey1: #959595;
-        @grey2: #d2d2d2;
+            @black: #000000;
+            @grey1: #959595;
+            @grey2: #d2d2d2;
 
-        @background: @green;
-        @font: "Droid Serif", serif;
+            @background: @green;
+            @font: "Droid Serif", serif;
 
-        body { background: @background; font-family: @font; }
+            body { background: @background; font-family: @font; }
 
-        #site-content  {
-            background: @white;
-            color: @blue;
-        }
+            #site-content  {
+                background: @white;
+                color: @blue;
+            }
 
-        #site-footer {
-            min-height: 128px;
-            color: @white;
+            #site-footer {
+                min-height: 128px;
+                color: @white;
 
-            a.icon {
-                margin-right: 16px;
-                display: block;
-                float: left;
-                svg {
-                    fill: #ffffff;
-                    &:hover { fill: #000000; }
+                a.icon {
+                    margin-right: 16px;
+                    display: block;
+                    float: left;
+                    svg {
+                        fill: #ffffff;
+                        &:hover { fill: #000000; }
+                    }
                 }
             }
-        }
 
-        .content-block { padding: 24px 0px; }
+            .content-block { padding: 24px 0px; }
 
-        p { margin: 16px 0px; font-size: 1.5em; }
-        span.meta { .info-font(@grey1); }
+            p { margin: 16px 0px; font-size: 1.5em; }
+            span.meta { .info-font(@grey1); }
 
-        hr {
-            border: 1px solid @grey2;
-            border-top: 0px;
-        }
+            hr {
+                border: 1px solid @grey2;
+                border-top: 0px;
+            }
 
-        a.link {
-            text-decoration: none;
-            &.green { color: @green; }
-            &.blue  { color: @blue; }
-            &.red   { color: @red; }
-            &:hover { color: @black; }
-        }
+            a.link {
+                text-decoration: none;
+                &.green { color: @green; }
+                &.blue  { color: @blue; }
+                &.red   { color: @red; }
+                &:hover { color: @black; }
+            }
 
-        .wrapper { margin-right: auto; margin-left: auto; }
+            .wrapper { margin-right: auto; margin-left: auto; }
 
-        @media (min-width: 360px) { .wrapper { width: 332px; } }
-        @media (min-width: 480px) { .wrapper { width: 452px; } }
-        @media (min-width: 640px) { .wrapper { width: 612px; } }
-        @media (min-width: 768px) { .wrapper { width: 740px; } }
+            @media (min-width: 360px) { .wrapper { width: 332px; } }
+            @media (min-width: 480px) { .wrapper { width: 452px; } }
+            @media (min-width: 640px) { .wrapper { width: 612px; } }
+            @media (min-width: 768px) { .wrapper { width: 740px; } }
 
-    </style>
-    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Droid+Serif" />
-    <script type="text/javascript" src="https://cdn.rawgit.com/jashkenas/coffeescript/master/extras/coffee-script.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/react-with-addons.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/JSXTransformer.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/less.js/2.5.1/less.min.js"></script>
+        </style>
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Droid+Serif" />
+        <script type="text/javascript" src="https://cdn.rawgit.com/jashkenas/coffeescript/master/extras/coffee-script.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/react-with-addons.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/JSXTransformer.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/less.js/2.5.1/less.min.js"></script>
     </head>
     <body>
         <div id="site-content" class="content-block">
@@ -85,21 +85,21 @@
         </div>
         <script type="text/coffeescript">
             class Song
-            @base_url: "https://w.soundcloud.com/player/?"
-            @defaults =
-            show_user: true
-            auto_play: false
-            hide_related: true
-            show_reposts: false
-            show_comments: false
+                @base_url: "https://w.soundcloud.com/player/?"
+                @defaults =
+                    show_user: true
+                    auto_play: false
+                    hide_related: true
+                    show_reposts: false
+                    show_comments: false
 
-            constructor: (track, options) ->
-            @options = jQuery.extend Song.defaults, options or {}
-            @options.url = track
-            @options.visual = true
+                constructor: (track, options) ->
+                    @options = jQuery.extend Song.defaults, options or {}
+                    @options.url = track
+                    @options.visual = true
 
-            getEmbedUrl: () ->
-            return Song.base_url + jQuery.param @options
+                getEmbedUrl: () ->
+                    return Song.base_url + jQuery.param @options
             window.Song = Song
         </script>
         <script type="text/jsx">
@@ -110,11 +110,11 @@
                         return <path d={item} />
                     });
                     return (
-                    <a href={this.props.href} className="icon">
-                        <svg viewBox={this.props.viewbox} style={dimensions}>
-                            {paths}
-                        </svg>
-                    </a>
+                        <a href={this.props.href} className="icon">
+                            <svg viewBox={this.props.viewbox} style={dimensions}>
+                                {paths}
+                            </svg>
+                        </a>
                     );
                 }
             });
@@ -138,26 +138,14 @@
                 <span className="meta">june 2013 to august 2015 southampton, uk</span>
             ];
 
-            var mancrates = [
-                "Full-stack developer at ",
-                <a href="http://www.mancrates.com/" className="link red">Man Crates</a>,
-                " through the ",
-                <a href="http://www.siliconvalleyinternship.com/" className="link green">Silicon Valley Internship Programme</a>,
-                ". ",
-                <span className="meta">august 2015 to present redwood city, ca</span>
-            ];
-
-
-
             var Main = React.createClass({
                 render: function () {
                     return (
-                    <div id="site-content-main" className="wrapper">
-                        <Bullet content={university}/>
-                        <hr/>
-                        <Bullet content={freshrelevance}/>
-                        <Bullet content={mancrates}/>
-                    </div>
+                        <div id="site-content-main" className="wrapper">
+                            <Bullet content={university}/>
+                            <hr/>
+                            <Bullet content={freshrelevance}/>
+                        </div>
                     );
                 }
             });
@@ -172,11 +160,11 @@
                                     "M32.549,24.826c0,4.257-3.464,7.723-7.723,7.723c-4.259,0-7.722-3.466-7.722-7.723c0-1.024,0.204-2.003,0.568-2.897     h-4.215v11.56c0,1.494,1.213,2.704,2.706,2.704h17.323c1.491,0,2.706-1.21,2.706-2.704v-11.56h-4.217     C32.342,22.823,32.549,23.802,32.549,24.826z"]
                     };
                     return (
-                    <div className="wrapper">
-                        <Icon href="https://github.com/mkohlmyr" viewbox="0 0 16 16" paths={paths.github} />
-                        <Icon href="https://twitter.com/mkohlmyr" viewbox="0 0 49.652 49.652" paths={paths.twitter} />
-                        <Icon href="https://instagram.com/mkohlmyr" viewbox="0 0 49.652 49.652" paths={paths.instagram} />
-                    </div>
+                        <div className="wrapper">
+                            <Icon href="https://github.com/mkohlmyr" viewbox="0 0 16 16" paths={paths.github} />
+                            <Icon href="https://twitter.com/mkohlmyr" viewbox="0 0 49.652 49.652" paths={paths.twitter} />
+                            <Icon href="https://instagram.com/mkohlmyr" viewbox="0 0 49.652 49.652" paths={paths.instagram} />
+                        </div>
                     );
                 }
             });
