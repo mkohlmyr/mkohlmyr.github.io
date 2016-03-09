@@ -12,10 +12,12 @@
             @white: #ffffff;
             @blue: #0080d2;
             @red: #ff0080;
+            @orange: #fba200;
 
             @black: #000000;
             @grey1: #959595;
             @grey2: #d2d2d2;
+            @grey3: #f3f3f3;
 
             @background: @green;
             @font: "Droid Serif", serif;
@@ -63,16 +65,17 @@
             }
 
             hr {
-                border: 1px solid @grey2;
+                border: 1px solid @grey3;
                 border-top: 0px;
             }
 
             a.link {
                 text-decoration: none;
-                &.green { color: @green; }
-                &.blue  { color: @blue; }
-                &.red   { color: @red; }
-                &:hover { color: @black; }
+                &.green  { color: @green; }
+                &.blue   { color: @blue; }
+                &.red    { color: @red; }
+                &.orange { color: @orange; }
+                &:hover  { color: @black; }
             }
 
             .wrapper { margin-right: auto; margin-left: auto; }
@@ -92,14 +95,18 @@
         <div id="site-content" class="content-block">
             <div id="site-content-main" class="wrapper">
                 <p class="bullet">
-                    Mikael K&ouml;hlmyr, BSc Computer Science from the
+                    Software developer at <a href="http://www.freshrelevance.com/" class="link red">Fresh Relevance</a> building third party integrations.
+                    <span class="meta"><i class="fa fa-clock-o"></i> june 2013 &mdash; current <i class="fa fa-map-marker"></i> southampton, uk</span>
+                </p>
+                <hr/>
+                <p class="bullet">
+                    Graduated with a BSc in Computer Science from the
                     <a href="http://www.southampton.ac.uk/" class="link green">University of Southampton</a>.
                     <span class="meta"><i class="fa fa-graduation-cap"></i> 2013 <i class="fa fa-map-marker"></i> southampton, uk</span>
                 </p>
                 <hr/>
                 <p class="bullet">
-                    Software developer at <a href="http://www.freshrelevance.com/" class="link red">Fresh Relevance</a> building third party integrations.
-                    <span class="meta"><i class="fa fa-clock-o"></i> june 2013 &mdash; current <i class="fa fa-map-marker"></i> southampton, uk</span>
+                    Completed the Digital Production track at <a href="http://innovationsgymnasiet.se/har-finns-vi/goteborg/" class="link orange">Thoren Innovation School</a> G&ouml;teborg.<span class="meta"><i class="fa fa-graduation-cap"></i> 2010 <i class="fa fa-map-marker"></i> gothenburg, se</span>
                 </p>
             </div>
         </div>
