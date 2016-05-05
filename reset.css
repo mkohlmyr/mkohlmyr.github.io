@@ -1,0 +1,17 @@
+html, body, div, p, span, a { margin:  0;
+                              padding: 0;
+                              border:  0; }
+
+
+html, body, div, p, span, a { font-size:      100%;
+                              font:           inherit;
+                              line-height:    inherit;
+                              vertical-align: baseline; }
+
+
+body { font-family: "Droid Serif", serif;
+       line-height: 1;
+       background: #00cb91; }
+
+a    { text-decoration: none;
+       color: inherit; }
