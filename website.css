@@ -6,20 +6,6 @@ a:hover { color: #000000; }
 #page-section-main { color:      #0080d2;
                      background: #ffffff; }
 
-#header-name { display: inline;
-               padding: 3px 6px;
-
-               background: #f0f0f0;
-               color: #ffffff;
-
-               font-size: 1em;
-               font-family: 'Montserrat', sans-serif;
-               font-weight: bold;
-               text-transform: uppercase; }
-
-#header-name:hover { background: #e5e5e5;
-                     cursor: default; }
-
 
 #github-icon-link      { display: block; float: right; }
 #github-icon-svg       { width: 32px;
