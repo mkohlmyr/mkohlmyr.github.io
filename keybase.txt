@@ -6,25 +6,20 @@ I hereby claim:
 
   * I am an admin of https://mkohlmyr.com
   * I am mkohlmyr (https://keybase.io/mkohlmyr) on keybase.
-  * I have a public key with fingerprint 3423 1C3A E429 4027 B83C  B2EB DB30 7841 F8D4 908F
+  * I have a public key with fingerprint 84C0 F73F 6EEF 1E4F 3C91  3908 C357 2468 208D 6E25
 
 To do so, I am signing this object:
 
 {
     "body": {
         "key": {
-            "eldest_kid": "0101ab8243b4a493da6194a0d926d66c6fb01c378d4d043df625bc2a63feb8857d4a0a",
-            "fingerprint": "34231c3ae4294027b83cb2ebdb307841f8d4908f",
+            "eldest_kid": "0101365af3212d735f84acb44adc484aef8a9155b53e1c1cb8a255d9e911741c0ef80a",
+            "fingerprint": "84c0f73f6eef1e4f3c913908c3572468208d6e25",
             "host": "keybase.io",
-            "key_id": "db307841f8d4908f",
-            "kid": "0101ab8243b4a493da6194a0d926d66c6fb01c378d4d043df625bc2a63feb8857d4a0a",
+            "key_id": "c3572468208d6e25",
+            "kid": "0101365af3212d735f84acb44adc484aef8a9155b53e1c1cb8a255d9e911741c0ef80a",
             "uid": "4407166ca8dfb383f7e878f647123500",
             "username": "mkohlmyr"
-        },
-        "revoke": {
-            "sig_ids": [
-                "fdb62ad6a3c30f5ac015a81f3e9b2345da22d4f940b07d7bef757873d6a975fa0f"
-            ]
         },
         "service": {
             "hostname": "mkohlmyr.com",
@@ -33,38 +28,36 @@ To do so, I am signing this object:
         "type": "web_service_binding",
         "version": 1
     },
-    "ctime": 1454699519,
+    "ctime": 1465326199,
     "expire_in": 157680000,
-    "prev": "9bdca92c9f13e758b112611ea3dfbcead8bd20dbb71f0ad96d79bc3f838c123c",
-    "seqno": 11,
+    "prev": "c7dba31165a5deb7d60c16cb538411d670a1e20fb80a491279fb84a1dffc2f1f",
+    "seqno": 15,
     "tag": "signature"
 }
 
 which yields the signature:
 
 -----BEGIN PGP MESSAGE-----
-Version: Keybase OpenPGP v2.0.49
+Version: Keybase OpenPGP v2.0.53
 Comment: https://keybase.io/crypto
 
-yMJuAnicrZJtaBxFHMYvSdUmRpTaiiiinQ9iMZaZndmZ2StEqYovKCIpqVTLdV5z
-28vtXvY2Z9LkBIkp2FosFttqKW0RFWsCRWJaUdJTBCN9CWK1DVjUKIqKilqxSDXO
-Bv0ifnS/DDv7PL//s8/Mu5e15NqahpdMn8ptuvmtpmNvn+vPdU/8Mj8EZKwHQX4I
-lMzCYnq1qaaFUqhBHkAEkZDcI1gSQQKsBUUBEVAHHtWUKmolRAozromGBGtLPV8q
-T1BsjeTcZ9qJBegANox6TFJJwih1WEw87GzCEC8g0GOSYyU9I7XEkHGCrOMFkFtn
-LMbVzOHCSVE1K8PY7bmXwkK8/9D/z7n7F3CEQIacTXBtJebYMsMZt5Qw5GEfwkxY
-NUkkysapy6W42FseTEC9AySmFpdM1ms17HGhqyD/MLBaUk9oKrDC0PpCQeQLjiw2
-gfQw8bXwPE2sq0ZCppk0lvmMM+wcAfOtgBasd2w3sRaqBXjW0r+mr1Rx2eWqJHEa
-q7jXfSmmaaWaz1Klg5VM+qiRhb8hBRlG2p2Rc9RMUg3jCOSRU6o0zKiI+IQGgY+C
-DmAGKmFiCmGm8Bnl0D3ZHFNzyEBqJQJPBRZhw3wuEfIoQka4jqUyQnOpPailZMhC
-oQOqWSAVthxz5bpUIPutvih2bORyih7HdM1FIu1PDKi/03hkUa6pLXfxRc3Z5c21
-tV7xz5XuvHxx7sDe6InW/udUy4MftO+6enDzjUcH1nff/tL5K0deGSuqE9G+dff8
-tuzsii3DDTPZXv/u14Odkbf6ui/gokvrh7Yse2rHH0++2Dk6s3Vi+Z4bdq5Zt/b7
-329Jyrvm8s/S3dvu3ljctqp1Y0lNfzz2w9OHJzft3n/b1Fcn7pIf2rXHX+u6cLBn
-/s779t+0b9UE+OlNWho6iZquOtfxbWO4/dWuF27d/t749GzfJwPmwNSp7YVLxjf3
-bbi/5fDZpT+OXf85++wB+uWnM6NT443a/Pv4QvPqHV+fH5jb+/LrXVuvPVY//fyR
-2dE/H5oZPTl75NBHzdfcsXjPSPGxZ34+0yhO3Jt2z78xuTxZMjL3eJT/ZudfytFl
-Jw==
-=OJPf
+yMIlAnicrVJbSFRBGN71UugWSUlQYdIJoVwvZ8797JIvogWSZqT7Ym7nMuMe93LW
+s+vaJmYhZFiGyHbTTLegMFMIw+olKiIMuxekWRQ9SEYoQWQUZnOkXqLH5mX++ef7
+vvnm47+7PNGSapW+POf3H32dbB27fare4nKtbWgkZF2NEo5GwgsXN+hTYSjs9moq
+4SBIQAKaYyVEU4BSeZpFAiMpMsNIqsLgEiJBEgHLyiwNgQIUWZAollVFKALAM0Ah
+MYCUiBwCaYEaaAQNLRDGsgKjkIinEQchApBBtCICWiQFhWZ5iuEEihRUDlIsJnr0
+kMnA5mQpBPM0Hffwwb1o7x/4/+y7flGOYUgecJwiCSqSaYFGPBR4AXEMDyiaJUkT
+GIJGQPJDjPZ7dY/PHzWIphwCdyOaAs1gzZ/8hchTdD/mBg09rCu6D994wuFgyGEy
+w9GgCW2Asvu3iFvWAirOETMi0AhpeoBwAIxUwpqpChiOpSkOiGIOAfcGNQO6NRPB
+8pxA4mW+AyNmarwqSzQAOB9WhTKvcqQCOAVnITAAqBxPSgBSJJJxBIwIKF7EJSMB
+FSGFQgAR5rfqArqpjX1KNVgzpNUEpHC9AYmmO7eqkizWVMuS5ARzwCypKWl/xu5q
+ytKF5jejTffsNoerfHhfwRpb9/d52mb76Bycij0xNg4OXbPPV6TXT1S5nR0/K/uu
+x/o+7Go+UG54e85Wl+X7zmdegmc6Cz5bN/dvWxlzWh6dzBpv2pDhjH+at3WdeLAp
+5GszojfmVi/LbSk6khjPfDgws7Uuo6D/SqGndcJaMRyIv7Sn166YLMmbLcwfKXo6
+MD1U2fH4dFtCbP3FPXOQir1PK4t/jWeNnNvp6WqxVyeVbpl2RXqzZyw/EmYrfPzU
+t4wXr7p3pGW3jx+/kF876nVbey5v720tjtlXHS7dPZLr7kYdz9KiBw/NRSfax9YV
+HavW+JIlxc6Fks6bje8G7k++/QWfUTvQ
+=9tZ3
 -----END PGP MESSAGE-----
 
 And finally, I am proving ownership of this host by posting or
