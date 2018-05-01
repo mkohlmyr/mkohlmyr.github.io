@@ -25,10 +25,12 @@
   </head>
   <body>
     <script type="application/javascript">
+      const dateString = new Date().toLocaleString('en-GB', { month: 'long', year: 'numeric' });
+      const datePattern = /^\s+\[date\]/m;
       const linkPattern = /\[([0-9]+)\]/g;
       const textContent = `
                                                             M. Kohlmyr
-                                                         February 2018
+                                                                [date]
 
            RESUME FOR MIKAEL KOHLMYR, SENIOR SOFTWARE ENGINEER           
 
@@ -67,7 +69,7 @@
     written in Python.
  
     Performed code-reviews and managed deployments of customer-
-    tracking JavaScript code for large international e-commerce 
+    tracking JavaScript code for several international e-commerce 
     retailers.
 
 
@@ -86,14 +88,27 @@
 
       const pre = document.createElement("pre");
 
-      function replacer(_, i) {
+      function linkReplacer(_, i) {
         return `[<a href="${links[i]}">${i}</a>]`;
       }
 
-      pre.innerHTML = textContent.replace(
+      function dateReplacer() {
+        return dateString.padStart(70, " ");
+      }
+
+      let finalHTML = textContent;
+
+      finalHTML = finalHTML.replace(
         linkPattern,
-        replacer
+        linkReplacer
       );
+
+      finalHTML = finalHTML.replace(
+        datePattern,
+        dateReplacer
+      )
+
+      pre.innerHTML = finalHTML;
 
       document.body.appendChild(pre);
     </script>
