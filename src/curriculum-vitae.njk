@@ -3,8 +3,20 @@ layout: "main"
 ---
 
 <div id="curriculum-vitae">
-  {% set groupedExperience = collections.experience | groupby("data.name") %}
-  {% for company, positions in groupedExperience %}
-    {% include "experience.njk" %}
-  {% endfor %}
-</div>
+  <section class="experience">
+    <h1>Experience</h1>
+    {% set groupedExperience = collections.experience | groupby("data.name") %}
+    {% for company, positions in groupedExperience %}
+      {% include "experience.njk" %}
+    {% endfor %}
+  </section>
+  <section class="education">
+    <h1>Education</h1>
+    <div class="education-container">
+      <h2 class="education-institution-name">University of Southampton</h2>
+      <h3 class="education-institution-award">BSc, Computer Science</h3>
+      <p class="education-institution-location">Southampton, United Kingdom</p>
+      <p class="education-institution-date">2010 - 2013</p>
+    </div>
+  </ul>
+</section></div>

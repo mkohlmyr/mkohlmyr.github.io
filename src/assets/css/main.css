@@ -11,6 +11,7 @@
 html {
   font-size: 14px;
   min-height: 100vh;
+  scrollbar-gutter: stable;
 }
 
 body {
@@ -116,8 +117,18 @@ body > footer {
 
 }
 
-#curriculum-vitae .experience {
+#curriculum-vitae section:not(:last-child) {
+  margin-bottom: 2rem;
 }
+
+#curriculum-vitae section > h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+#curriculum-vitae section.experience {
+}
+
 
 #curriculum-vitae .experience h2.experience-company-name {
   font-size: 1rem;
@@ -134,6 +145,29 @@ body > footer {
 }
 
 #curriculum-vitae .experience p.experience-company-location {
+  font-size: 0.8rem;
+  color: gray;
+}
+
+#curriculum-vitae section.education {
+}
+
+#curriculum-vitae section.education h2.education-institution-name {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+#curriculum-vitae section.education h3.education-institution-award {
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+#curriculum-vitae section.education p.education-institution-location {
+  font-size: 0.8rem;
+  color: gray;
+}
+
+#curriculum-vitae section.education p.education-institution-date {
   font-size: 0.8rem;
   color: gray;
 }
