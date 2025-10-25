@@ -1,0 +1,10 @@
+---
+layout: "main"
+---
+
+<div id="curriculum-vitae">
+  {% set groupedExperience = collections.experience | groupby("data.name") %}
+  {% for company, positions in groupedExperience %}
+    {% include "experience.njk" %}
+  {% endfor %}
+</div>

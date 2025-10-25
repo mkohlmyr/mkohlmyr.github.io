@@ -1,0 +1,16 @@
+<article class="experience">
+  <h2 class="experience-company-name">{{ company }}</h2>
+  {% for position in positions %}
+    <h3 class="experience-company-title">{{ position.data.title }}</h3>
+    <p class="experience-company-location">{{ position.data.location }}</p>
+    <p class="experience-company-date">
+      {{ position.data.from }} -
+      {% if position.data.until %}
+        {{ position.data.until }}
+      {% else %}
+        Present
+      {% endif %}
+    </p>
+    <div class="experience-content">{{ position.templateContent | safe }}</div>
+  {% endfor %}
+</article>

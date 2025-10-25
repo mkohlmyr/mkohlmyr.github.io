@@ -1,19 +1,28 @@
-html {
+@charset "UTF-8";
+
+*,
+*:before,
+*:after {
   box-sizing: border-box;
-  font-size: 16px;
-}
-
-*, *:before, *:after {
-  box-sizing: inherit;
-}
-
-body, h1, h2, h3, h4, h5, h6, p, ol, ul {
   margin: 0;
   padding: 0;
-  font-weight: normal;
 }
 
-ol, ul {
+html {
+  font-size: 14px;
+  min-height: 100vh;
+}
+
+body {
+  min-height: 100vh;
+  font-size: 1rem;
+  font-weight: 300;
+  font-family: Arial, sans-serif;
+  line-height: 1.5rem;
+}
+
+ol,
+ul {
   list-style: none;
 }
 
@@ -25,4 +34,106 @@ img {
 a {
   color: inherit;
   text-decoration: none;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+b {
+  font-weight: 600;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+body {
+  background-color: #ffffff;
+  display: grid;
+  grid-template-columns: 1fr min(48rem, 100%) 1fr;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    ". header ."
+    ". main ."
+    ". footer .";
+}
+
+body > header {
+  grid-area: header;
+  margin: 2rem 1rem 1rem 1rem;
+}
+
+body > header > nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+}
+
+body > header > nav > ul {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+}
+
+nav h1 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #00aa83;
+}
+
+nav a {
+  color: gray;
+}
+
+nav a:hover {
+  color: black;
+}
+
+body > main {
+  grid-area: main;
+  margin: 1rem 1rem;
+}
+
+body > footer {
+  grid-area: footer;
+  margin: 1rem 1rem 2rem 1rem;
+}
+
+#curriculum-vitae {
+
+}
+
+#curriculum-vitae .experience {
+}
+
+#curriculum-vitae .experience h2.experience-company-name {
+  font-size: 1rem;
+}
+
+#curriculum-vitae .experience h3.experience-company-title {
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+#curriculum-vitae .experience p.experience-company-date {
+  font-size: 0.8rem;
+  color: gray;
+}
+
+#curriculum-vitae .experience p.experience-company-location {
+  font-size: 0.8rem;
+  color: gray;
 }

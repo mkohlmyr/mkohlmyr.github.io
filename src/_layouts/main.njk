@@ -16,10 +16,10 @@
     <link rel="stylesheet" href="/assets/css/main.css">
   </head>
   <body>
-    <header></header>
+    {% include "header.njk" %}
     <main>
-      {% block content %}{% endblock %}
+      {{ content | safe }}
     </main>
-    <footer></footer>
+    {% include "footer.njk" %}
   </body>
 </html>
