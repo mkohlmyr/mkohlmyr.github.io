@@ -73,7 +73,7 @@ body {
 
 body > header {
   grid-area: header;
-  margin: 2rem 1rem 1rem 1rem;
+  padding: 2rem 1rem 1rem 1rem;
 }
 
 body > header > nav {
@@ -105,16 +105,28 @@ nav a:hover {
 
 body > main {
   grid-area: main;
-  margin: 1rem 1rem;
+  padding: 1rem 1rem;
 }
 
 body > footer {
   grid-area: footer;
-  margin: 1rem 1rem 2rem 1rem;
+  padding: 1rem 1rem 2rem 1rem;
+  font-size: 0.8rem;
+  color: gray;
+  border-top: 1px solid #e0e0e0;
 }
 
 #curriculum-vitae {
 
+}
+
+#curriculum-vitae ol,
+#curriculum-vitae ul {
+  list-style: disc;
+}
+
+#curriculum-vitae li {
+  margin-left: 1rem;
 }
 
 #curriculum-vitae section:not(:last-child) {
@@ -122,13 +134,18 @@ body > footer {
 }
 
 #curriculum-vitae section > h1 {
+  margin-bottom: 1rem;
   font-size: 1.5rem;
   font-weight: 600;
 }
 
 #curriculum-vitae section.experience {
+
 }
 
+#curriculum-vitae .experience-container {
+  margin-bottom: 1.5rem;
+}
 
 #curriculum-vitae .experience h2.experience-company-name {
   font-size: 1rem;
@@ -139,14 +156,15 @@ body > footer {
   font-weight: 300;
 }
 
-#curriculum-vitae .experience p.experience-company-date {
+#curriculum-vitae .experience p.experience-company-metadata {
   font-size: 0.8rem;
   color: gray;
+  margin-bottom: 0.5rem;
 }
 
-#curriculum-vitae .experience p.experience-company-location {
-  font-size: 0.8rem;
-  color: gray;
+#curriculum-vitae .experience-content {
+  margin-bottom: 2rem;
+  line-height: 1.75rem;
 }
 
 #curriculum-vitae section.education {
@@ -162,12 +180,13 @@ body > footer {
   font-weight: 300;
 }
 
-#curriculum-vitae section.education p.education-institution-location {
+#curriculum-vitae section.education p.education-institution-metadata {
   font-size: 0.8rem;
   color: gray;
 }
 
-#curriculum-vitae section.education p.education-institution-date {
-  font-size: 0.8rem;
-  color: gray;
+/* For blog/article content lists */
+article ul,
+article ol {
+  padding-left: 1rem;
 }

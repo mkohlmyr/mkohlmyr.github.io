@@ -2,3 +2,10 @@
 layout: main
 ---
 
+<ol>
+  {% for article in collections.articles %}
+    <li>{{ article.data.date | formatDate }} &centerdot;
+      <a href="{{ article.url }}">{{ article.data.title }}</a>
+    </li>
+  {% endfor %}
+</ol>

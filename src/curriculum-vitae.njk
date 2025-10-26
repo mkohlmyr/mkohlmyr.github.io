@@ -3,6 +3,19 @@ layout: "main"
 ---
 
 <div id="curriculum-vitae">
+  <section class="profile">
+    <p>+44 7925 237 070</p>
+    <p>mkohlmyr@gmail.com</p>
+    <p>linkedin.com/in/mikael-kohlmyr</p>
+  </section>
+  <section class="summary">
+    <h1>Summary</h1>
+    <p>Experienced leader in Software Engineering with a proven track record of driving technical excellence and strategic
+      initiatives in roles spanning technical leadership and people management. At Kaluza, led the engineering team of OVO
+      Energy France, growing the business from zero to 35,000 customers. At Lumo Health, transformed cloud and application
+      architecture, allowing the business to adopt a more mature DevSecOps posture. Seeking opportunities to build and lead
+      agile teams with a strong sense of ownership in a dynamic environment.</p>
+  </section>
   <section class="experience">
     <h1>Experience</h1>
     {% set groupedExperience = collections.experience | groupby("data.name") %}
@@ -15,8 +28,7 @@ layout: "main"
     <div class="education-container">
       <h2 class="education-institution-name">University of Southampton</h2>
       <h3 class="education-institution-award">BSc, Computer Science</h3>
-      <p class="education-institution-location">Southampton, United Kingdom</p>
-      <p class="education-institution-date">2010 - 2013</p>
+      <p class="education-institution-metadata">2010 &mdash; 2013 &centerdot; Southampton, United Kingdom</p>
     </div>
   </ul>
 </section></div>

@@ -18,10 +18,24 @@ export default function (eleventyConfig) {
     return collectionApi.getFilteredByGlob("src/experience/**.md").sort((a, b) => {
       return new Date(b.data.from).getTime() - new Date(a.data.from).getTime();
     })
-  })
+  });
+
+  eleventyConfig.addCollection("articles", function(collectionApi) {
+    return collectionApi.getFilteredByGlob("src/20**/**/*.md")
+      .sort((a, b) => new Date(a.data.date).getTime() - new Date(b.data.date).getTime());
+  });
 
   eleventyConfig.addGlobalData("copyrightYear", () => {
     return new Date().getFullYear();
+  });
+
+  eleventyConfig.addFilter("formatDate", (dt) => {
+
+    return dt.toLocaleDateString('en-GB', {
+      day: 'numeric',
+      month: 'short',
+      year: 'numeric'
+    });
   });
 
   return {

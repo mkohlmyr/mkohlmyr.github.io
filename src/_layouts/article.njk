@@ -1,0 +1,9 @@
+---
+layout: main
+---
+
+<article>
+  <h1>{{ title }}</h1>
+  <time datetime="{{ date }}">{{ date | formatDate }}</time>
+  <div>{{ content | safe }}</div>
+</article>
