@@ -20,18 +20,13 @@ export default function (eleventyConfig) {
     })
   });
 
-  eleventyConfig.addCollection("articles", function(collectionApi) {
+  eleventyConfig.addCollection("articles", (collectionApi) => {
     return collectionApi.getFilteredByGlob("src/20**/**/*.md")
-      .sort((a, b) => new Date(a.data.date).getTime() - new Date(b.data.date).getTime());
-  });
-
-  eleventyConfig.addGlobalData("copyrightYear", () => {
-    return new Date().getFullYear();
+      .sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime());
   });
 
   eleventyConfig.addFilter("formatDate", (dt) => {
-
-    return dt.toLocaleDateString('en-GB', {
+    return new Date(dt.toString()).toLocaleDateString('en-GB', {
       day: 'numeric',
       month: 'short',
       year: 'numeric'
