@@ -2,8 +2,8 @@
 title: "Lorem ipsum dolor sit amet"
 date: 2025-12-01
 description: "This is my first article using Eleventy"
-tags: ["eleventy", "writing", "static-site"]
 layout: "article"
+cover: "splash.png"
 ---
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pulvinar eu neque ac mattis. Praesent vehicula a massa at ullamcorper. Sed facilisis justo neque, in ullamcorper neque facilisis eu. Proin viverra malesuada laoreet. Ut rutrum sed turpis feugiat pretium. Phasellus convallis neque ex, vitae imperdiet augue ultricies nec. Phasellus ullamcorper, purus facilisis scelerisque varius, lacus libero fermentum felis, id tincidunt nunc lacus et nibh. Curabitur ac lacinia ligula. Mauris nec enim nulla. Sed ornare lobortis magna, non volutpat massa accumsan non.
 

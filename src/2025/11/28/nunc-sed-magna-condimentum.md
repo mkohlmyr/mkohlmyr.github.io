@@ -2,8 +2,8 @@
 title: "Nunc sed magna condimentum"
 date: 2025-11-28
 description: "This is my first article using Eleventy"
-tags: ["eleventy", "writing", "static-site"]
 layout: "article"
+cover: "solid-color-image.png"
 ---
 Nunc sed magna condimentum, pulvinar dolor sit amet, pretium urna. Ut ex neque, eleifend eu sapien ut, congue laoreet ante. Suspendisse blandit lectus mauris, ac finibus urna lobortis in. Aliquam ultricies, diam non consectetur aliquet, risus enim accumsan felis, ut dictum dui odio et orci. Cras eu leo euismod, convallis ante nec, bibendum leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Curabitur vitae leo sodales, maximus lacus a, cursus purus. Aliquam dui massa, mattis ut dolor sed, pellentesque pulvinar lacus. Etiam ut ornare mi.
 

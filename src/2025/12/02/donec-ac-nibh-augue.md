@@ -2,8 +2,8 @@
 title: "Donec ac nibh augue"
 date: 2025-12-02
 description: "This is my first article using Eleventy"
-tags: ["eleventy", "writing", "static-site"]
 layout: "article"
+cover: "field.png"
 ---
 Donec ac nibh augue. Duis molestie, lacus eu suscipit iaculis, elit velit mollis magna, vel tempor tellus mi sit amet nisl. Cras nec iaculis neque. Aenean ullamcorper purus justo, sed condimentum dolor consequat sit amet. Suspendisse id condimentum justo. Nam pretium volutpat lectus, nec euismod ante vestibulum non. Donec molestie nibh sit amet est efficitur dignissim. Vivamus at justo faucibus, sagittis metus sit amet, dictum diam. Nullam porta pharetra elementum. Vestibulum eu placerat felis, ut rhoncus tortor. Pellentesque finibus consectetur euismod.
 

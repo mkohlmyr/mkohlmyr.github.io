@@ -9,8 +9,9 @@
 }
 
 html {
-  font-size: 12px;
+  font-size: 14px;
   min-height: 100vh;
+  min-width: 360px;
   scrollbar-gutter: stable;
 }
 
@@ -22,10 +23,6 @@ body {
   line-height: 1.5rem;
 }
 
-ol,
-ul {
-  
-}
 
 img {
   max-width: 100%;
@@ -47,6 +44,15 @@ h6 {
   overflow-wrap: break-word;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 1.275rem;
+}
+
 b {
   font-weight: 600;
 }
@@ -63,7 +69,7 @@ svg {
 body {
   background-color: #ffffff;
   display: grid;
-  grid-template-columns: 1fr min(48rem, 100%) 1fr;
+  grid-template-columns: 1fr minmax(0, min(1030px, 100%)) 1fr;
   grid-template-rows: auto 1fr auto;
   grid-template-areas:
     ". header ."
@@ -73,7 +79,7 @@ body {
 
 body > header {
   grid-area: header;
-  padding: 2rem 1rem 1rem 1rem;
+  padding: 2rem 1.5rem 1rem 1.5rem;
 }
 
 body > header > nav {
@@ -105,13 +111,77 @@ nav a:hover {
 
 body > main {
   grid-area: main;
-  padding: 1rem 1rem;
+  padding: 1rem 1.5rem;
 }
 
 body > footer {
   grid-area: footer;
-  padding: 1rem 1rem 2rem 1rem;
-  font-size: 0.8rem;
+  padding: 1rem 1.5rem 2rem 1.5rem;
+  font-size: 0.875rem;
   color: gray;
   border-top: 1px solid #e0e0e0;
+}
+
+/* Card grid layout */
+.article-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.article-card {
+  overflow: hidden;
+}
+
+.article-card-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.article-card-image-container {
+  border-radius: 0.5rem;
+  overflow: hidden;
+  margin-bottom: 0.5rem;
+}
+
+.article-card-link img {
+  width: 100%;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.article-card:hover .article-card-link img {
+  transform: scale(1.050);
+}
+
+.article-card-title {
+  display: block;
+  font-size: 1.275rem;
+  margin-bottom: 0.5rem;
+}
+
+.article-card-link time {
+  display: block;
+  font-size: 0.875rem;
+  color: gray;
+}
+
+@media (min-width: 696px) {
+  .article-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1030px) {
+  .article-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Article page styling */
+article > img {
+  border-radius: 0.5rem;
+  width: 100%;
+  margin-bottom: 1.5rem;
 }

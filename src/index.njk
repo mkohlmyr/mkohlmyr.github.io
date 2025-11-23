@@ -2,11 +2,16 @@
 layout: main
 ---
 
-<ol>
+<div class="article-grid">
   {% for article in collections.articles %}
-    <li>
-      <a href="{{ article.url }}">{{ article.data.title }}</a>
-      &centerdot; {{ article.data.date | formatDate }}
-    </li>
+    <article class="article-card">
+      <a href="{{ article.url }}" class="article-card-link">
+        <div class="article-card-image-container">
+          <img src="/assets/images/cover/{{ article.data.cover }}" alt="{{ article.data.title }}"/>
+        </div>
+        <span class="article-card-title">{{ article.data.title }}</span>
+        <time datetime="{{ article.data.date }}">{{ article.data.date | formatDate }}</time>
+      </a>
+    </article>
   {% endfor %}
-</ol>
+</div>
