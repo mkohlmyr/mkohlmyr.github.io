@@ -122,6 +122,20 @@ body > footer {
   border-top: 1px solid #e0e0e0;
 }
 
+body > footer p {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+body > footer a {
+  color: gray;
+}
+
+body > footer a:hover {
+  color: black;
+}
+
 /* Card grid layout */
 .article-grid {
   display: grid;
