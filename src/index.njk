@@ -2,6 +2,10 @@
 layout: main
 ---
 
+<section class="hero">
+  <h1 class="hero-tagline">Building great products and high-performing software engineering teams.</h1>
+</section>
+
 <div class="article-grid">
   {% for article in collections.articles %}
     <article class="article-card">
@@ -9,8 +13,10 @@ layout: main
         <div class="article-card-image-container">
           <img src="/assets/images/cover/{{ article.data.cover }}" alt="{{ article.data.title }}"/>
         </div>
-        <span class="article-card-title">{{ article.data.title }}</span>
-        <time datetime="{{ article.data.date }}">{{ article.data.date | formatDate }}</time>
+        <div class="article-card-body">
+          <span class="article-card-title">{{ article.data.title }}</span>
+          <time datetime="{{ article.data.date }}">{{ article.data.date | formatDate }}</time>
+        </div>
       </a>
     </article>
   {% endfor %}
