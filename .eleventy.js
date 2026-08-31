@@ -17,7 +17,7 @@ function incrementHeadingsPlugin(md) {
     // Only increment headings for articles (check layout first, then path)
     if (layout === "article" || isArticlePath) {
       state.tokens.forEach(token => {
-        if (token.type === 'heading_open') {
+        if (token.type === 'heading_open' || token.type === 'heading_close') {
           const level = parseInt(token.tag.charAt(1));
           if (level >= 1 && level <= 5) {
             token.tag = `h${level + 1}`;

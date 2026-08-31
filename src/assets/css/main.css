@@ -58,6 +58,7 @@ h3,
 h4,
 h5,
 h6 {
+  font-family: "Playfair Display", Georgia, serif;
   font-size: 1.275rem;
 }
 
@@ -77,7 +78,7 @@ svg {
 body {
   background-color: oklch(0.90 0.03 324 / 1);
   display: grid;
-  grid-template-columns: 1fr minmax(0, min(1030px, 100%)) 1fr;
+  grid-template-columns: 1fr minmax(0, min(50rem, 100%)) 1fr;
   grid-template-rows: auto 1fr auto;
   grid-template-areas:
     ". header ."
@@ -135,7 +136,7 @@ body > footer {
   padding: 1rem 2.75rem 2rem 2.75rem;
   font-size: 0.875rem;
   color: oklch(0.50 0.03 324 / 1);
-  border-top: 1px solid #e0e0e0;
+  border-top: 1px solid oklch(0 0 0 / 0.12);
 }
 
 body > footer p {
@@ -160,7 +161,6 @@ body > footer a:hover {
 
 .hero-tagline {
   max-width: 36rem;
-  font-family: "Playfair Display", Georgia, serif;
   font-size: 1.75rem;
   font-weight: 700;
   line-height: 1.25;
@@ -173,7 +173,7 @@ body > footer a:hover {
   }
 }
 
-@media (min-width: 1030px) {
+@media (min-width: 700px) {
   .hero-tagline {
     font-size: 2.75rem;
   }
@@ -243,12 +243,6 @@ body > footer a:hover {
   }
 }
 
-@media (min-width: 1030px) {
-  .article-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
 /* Article page styling */
 .article-hero {
   position: relative;
@@ -280,7 +274,7 @@ body > footer a:hover {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding: 2rem 1.5rem 1.5rem 1.5rem;
+  padding: 2rem 1.25rem 1.5rem 1.25rem;
   background: linear-gradient(to bottom, transparent 0%, transparent 30%, rgba(0, 0, 0, 0.5) 100%);
 }
 
@@ -296,22 +290,43 @@ body > footer a:hover {
   color: white;
 }
 
+/* Indents article body content to match the 2.75rem inset used for the
+   header, hero tagline and card text elsewhere on the site */
+.article-body {
+  padding: 0 1.25rem;
+  color: oklch(0.32 0.13 325 / 1);
+}
+
+.article-body p {
+  font-size: 1.375rem; /* ~19px at the 14px root */
+  line-height: 1.6;
+}
+
+/* Vertical rhythm: flow elements each carry a bottom margin only (never a
+   top margin) so adjacent gaps collapse to one consistent size everywhere.
+   Scoped to direct children so nested paragraphs (e.g. inside a blockquote)
+   keep their own tighter spacing below. */
+.article-body > p,
+.article-body > figure {
+  margin-bottom: 1.5rem;
+}
+
 /* Article content headings - only style h1-h3 inside article content */
-article > div h1 {
+.article-body h1 {
   font-size: 2.25rem;
   line-height: 1.3;
   margin-top: 2rem;
   margin-bottom: 1rem;
 }
 
-article > div h2 {
-  font-size: 1.75rem;
+.article-body h2 {
+  font-size: 1.9375rem; /* ~27px at the 14px root */
   line-height: 1.3;
   margin-top: 1.5rem;
   margin-bottom: 0.75rem;
 }
 
-article > div h3 {
+.article-body h3 {
   font-size: 1.375rem;
   line-height: 1.4;
   margin-top: 1.25rem;
@@ -319,11 +334,60 @@ article > div h3 {
 }
 
 /* Keep h4-h6 at the base heading size if needed */
-article > div h4,
-article > div h5,
-article > div h6 {
+.article-body h4,
+.article-body h5,
+.article-body h6 {
   font-size: 1.275rem;
   line-height: 1.4;
   margin-top: 1rem;
   margin-bottom: 0.5rem;
+}
+
+.article-body img,
+.article-body pre {
+  border-radius: 0.5rem;
+}
+
+.article-body figcaption {
+  margin-top: 0.5rem;
+  text-align: center;
+}
+
+/* Inline code gets a pill treatment; reset it back to plain for code that's
+   already inside a highlighted code block */
+.article-body code {
+  background: oklch(0 0 0 / 0.08);
+  border-radius: 0.3em;
+  padding: 0.15em 0.4em;
+  font-size: 0.85em;
+}
+
+.article-body pre code {
+  background: none;
+  padding: 0;
+  border-radius: 0;
+  font-size: inherit;
+}
+
+/* Higher-specificity selectors needed to win over the Prism theme's own
+   margin/background on pre[class*="language-"] */
+.article-body pre[class] {
+  margin: 0 0 1.5rem 0;
+  background: oklch(0.22 0.05 325 / 1);
+}
+
+.article-body blockquote {
+  background: oklch(0.96 0.015 325 / 1);
+  border-radius: 0.5rem;
+  padding: 1.25rem;
+  margin: 0 0 1.5rem 0;
+}
+
+.article-body blockquote p + p {
+  margin-top: 0.5rem;
+}
+
+.article-body blockquote blockquote {
+  background: oklch(0 0 0 / 0.04);
+  margin: 1rem 0 0 0;
 }
