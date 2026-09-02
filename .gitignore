@@ -1,6 +1,8 @@
 _site/
 node_modules/
+drafts/
 
+.claude/
 *.tmp
 *.bak
 *.db

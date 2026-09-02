@@ -8,6 +8,42 @@
   font-display: swap;
 }
 
+:root {
+  /* Palette */
+  --color-bg: oklch(0.90 0.03 324 / 1);
+  --color-surface: oklch(0.97 0.02 324 / 1);
+  --color-surface-alt: oklch(0.96 0.015 325 / 1);
+  --color-code-bg: oklch(0.22 0.05 325 / 1);
+  /* Matches the Prism vsc-dark-plus theme's default foreground, so unhighlighted
+     and highlighted code blocks read consistently. */
+  --color-code-text: #d4d4d4;
+
+  --color-text: oklch(0.32 0.13 325 / 1);
+  --color-text-strong: oklch(0.25 0.03 324 / 1);
+  --color-text-muted: oklch(0.50 0.03 324 / 1);
+  --color-accent: oklch(0.5 0.07 325.9 / 1);
+  /* Standard web link blue — checked at 6.9:1 against --color-bg, well
+     past the 4.5:1 AA minimum, so no mauve-specific tuning was needed. */
+  --color-link: #0000ee;
+
+  --color-divider: oklch(0.7 0.05 324 / 1);
+  --color-overlay-faint: oklch(0 0 0 / 0.04);
+  --color-overlay-weak: oklch(0 0 0 / 0.125);
+  --color-overlay-strong: oklch(0 0 0 / 0.16);
+  --color-shadow: oklch(0 0 0 / 0.125);
+
+  /* Spacing */
+  --space-box: 1.25rem;
+
+  /* Radii */
+  --radius: 0.5rem;
+  --radius-sm: 0.3em;
+
+  /* Type */
+  --font-heading: "Playfair Display", Georgia, serif;
+  --font-body: Arial, sans-serif;
+}
+
 *,
 *:before,
 *:after {
@@ -27,7 +63,7 @@ body {
   min-height: 100vh;
   font-size: 1rem;
   font-weight: 300;
-  font-family: Arial, sans-serif;
+  font-family: var(--font-body);
   line-height: 1.5rem;
 }
 
@@ -58,7 +94,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Playfair Display", Georgia, serif;
+  font-family: var(--font-heading);
   font-size: 1.275rem;
 }
 
@@ -76,9 +112,9 @@ svg {
 }
 
 body {
-  background-color: oklch(0.90 0.03 324 / 1);
+  background-color: var(--color-bg);
   display: grid;
-  grid-template-columns: 1fr minmax(0, min(50rem, 100%)) 1fr;
+  grid-template-columns: 1fr minmax(0, min(70rem, 100%)) 1fr;
   grid-template-rows: auto 1fr auto;
   grid-template-areas:
     ". header ."
@@ -107,23 +143,23 @@ body > header > nav > ul {
 body > header > nav > ul li:not(:last-child)::after {
   content: "\00B7";
   margin: 0 0.5rem;
-  color: oklch(0.50 0.03 324 / 1);
+  color: var(--color-text-muted);
 }
 
 nav .site-name {
   font-size: 1rem;
   font-weight: 600;
-  color: oklch(0.5 0.07 325.9 / 1);
+  color: var(--color-accent);
 }
 
 nav a {
-  color: oklch(0.50 0.03 324 / 1);
+  color: var(--color-text-muted);
   font-weight: 300;
   font-size: 0.875rem;
 }
 
 nav a:hover {
-  color: oklch(0.25 0.03 324 / 1);
+  color: var(--color-text-strong);
 }
 
 body > main {
@@ -135,8 +171,7 @@ body > footer {
   grid-area: footer;
   padding: 1rem 2.75rem 2rem 2.75rem;
   font-size: 0.875rem;
-  color: oklch(0.50 0.03 324 / 1);
-  border-top: 1px solid oklch(0 0 0 / 0.12);
+  color: var(--color-text-muted);
 }
 
 body > footer p {
@@ -146,11 +181,11 @@ body > footer p {
 }
 
 body > footer a {
-  color: oklch(0.50 0.03 324 / 1);
+  color: var(--color-text-muted);
 }
 
 body > footer a:hover {
-  color: oklch(0.25 0.03 324 / 1);
+  color: var(--color-text-strong);
 }
 
 /* Hero tagline */
@@ -164,7 +199,7 @@ body > footer a:hover {
   font-size: 1.75rem;
   font-weight: 700;
   line-height: 1.25;
-  color: oklch(0.32 0.13 325 / 1);
+  color: var(--color-text);
 }
 
 @media (min-width: 696px) {
@@ -184,19 +219,20 @@ body > footer a:hover {
   display: grid;
   grid-template-columns: 1fr;
   gap: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 .article-card {
-  background: oklch(0.97 0.02 324 / 1);
-  border-radius: 0.5rem;
-  border: 1px solid oklch(0 0 0 / 0.08);
+  background: var(--color-surface);
+  border-radius: var(--radius);
+  border: 1px solid var(--color-overlay-weak);
   overflow: hidden;
   transition: box-shadow 0.3s ease-out, transform 0.3s ease-out, border-color 0.3s ease-out;
 }
 
 .article-card:hover {
-  border-color: oklch(0 0 0 / 0.16);
-  box-shadow: 0 10px 25px oklch(0 0 0 / 0.125);
+  border-color: var(--color-overlay-strong);
+  box-shadow: 0 10px 25px var(--color-shadow);
   transform: translateY(-2px);
 }
 
@@ -217,7 +253,7 @@ body > footer a:hover {
 }
 
 .article-card:hover .article-card-link img {
-  transform: scale(1.03);
+  transform: scale(1.01);
 }
 
 .article-card-body {
@@ -228,7 +264,7 @@ body > footer a:hover {
   display: block;
   font-size: 1.275rem;
   margin-bottom: 0.5rem;
-  color: oklch(0.25 0.03 324 / 1);
+  color: var(--color-text-strong);
 }
 
 .article-card-link time {
@@ -243,58 +279,107 @@ body > footer a:hover {
   }
 }
 
-/* Article page styling */
-.article-hero {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 2 / 1;
-  min-height: 20rem;
+/* Pagination controls: flat card (no shadow) matching .article-card's
+   surface color, rather than sitting directly on the page background.
+   Grid (not flex + space-between) so the outer columns always reserve
+   the arrow's width - even when hidden - keeping the numbers centered. */
+.pagination {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  background: var(--color-surface);
+  border-radius: var(--radius);
+  padding: var(--space-box);
   margin-bottom: 1.5rem;
-  border-radius: 0.5rem;
-  overflow: hidden;
 }
 
-.article-hero img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  display: block;
+.pagination-link {
+  font-size: 1.275rem;
+  color: var(--color-accent);
 }
 
-.article-hero-overlay {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
+.pagination-link:hover {
+  color: var(--color-text-strong);
+}
+
+.pagination-link.is-hidden {
+  visibility: hidden;
+}
+
+.pagination-prev {
+  justify-self: start;
+}
+
+.pagination-next {
+  justify-self: end;
+}
+
+.pagination-pages {
   display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  padding: 2rem 1.25rem 1.5rem 1.25rem;
-  background: linear-gradient(to bottom, transparent 0%, transparent 30%, rgba(0, 0, 0, 0.5) 100%);
+  gap: 0.5rem;
+  list-style: none;
 }
 
-.article-hero-overlay h1 {
-  font-size: 3.5rem;
-  line-height: 1.2;
-  margin: 0 0 0.5rem 0;
-  color: white;
+/* Same gray as .article-card-link time, for the same "secondary detail"
+   role, so the non-current pages read as muted against the current one. */
+.pagination-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2rem;
+  height: 2rem;
+  font-size: 1.275rem;
+  font-weight: 400;
+  color: gray;
 }
 
-.article-hero-overlay time {
+.pagination-page:hover {
+  color: var(--color-text-strong);
+}
+
+.pagination-page.is-current {
+  color: var(--color-text);
+  pointer-events: none;
+}
+
+/* Article page styling */
+/* Matches .hero's padding/margin exactly so the title sits on the same
+   baseline as the hero tagline when navigating from the front page. */
+.article-header {
+  padding: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.article-header h1 {
+  font-size: 2.75rem;
+  line-height: 1.3;
+  margin-bottom: 0.5rem;
+  color: var(--color-text);
+}
+
+.article-header time {
+  display: block;
   font-size: 1rem;
-  color: white;
+  color: var(--color-text-muted);
 }
 
 /* Indents article body content to match the 2.75rem inset used for the
    header, hero tagline and card text elsewhere on the site */
 .article-body {
   padding: 0 1.25rem;
-  color: oklch(0.32 0.13 325 / 1);
+  color: var(--color-text);
+}
+
+/* Overrides the global `a { color: inherit; text-decoration: none; }` —
+   that reset suits chrome (nav, cards) but prose links need to read as
+   links against the mauve background. */
+.article-body a {
+  color: var(--color-link);
+  text-decoration: underline;
+}
+
+.article-body a:hover {
+  text-decoration: none;
 }
 
 .article-body p {
@@ -302,23 +387,49 @@ body > footer a:hover {
   line-height: 1.6;
 }
 
+/* The global *,*:before,*:after reset zeroes ul/ol padding, which pushes
+   outside-positioned markers past the article-body edge; restore an indent
+   in em units so nested lists compound it correctly. Font-size/line-height
+   are repeated here since lists otherwise fall back to the body defaults
+   instead of inheriting the paragraph rhythm above. */
+.article-body ul,
+.article-body ol {
+  font-size: 1.375rem;
+  line-height: 1.6;
+  padding-left: 1.25em;
+}
+
+.article-body li + li {
+  margin-top: 0.4rem;
+}
+
+.article-body li > ul,
+.article-body li > ol {
+  margin-top: 0.4rem;
+}
+
 /* Vertical rhythm: flow elements each carry a bottom margin only (never a
    top margin) so adjacent gaps collapse to one consistent size everywhere.
    Scoped to direct children so nested paragraphs (e.g. inside a blockquote)
    keep their own tighter spacing below. */
 .article-body > p,
-.article-body > figure {
+.article-body > figure,
+.article-body > ul,
+.article-body > ol {
   margin-bottom: 1.5rem;
 }
 
-/* Article content headings - only style h1-h3 inside article content */
-.article-body h1 {
-  font-size: 2.25rem;
-  line-height: 1.3;
-  margin-top: 2rem;
-  margin-bottom: 1rem;
+/* Article images always span the full content width, upscaling small
+   images if needed, rather than the global img reset's max-width cap. */
+.article-body > figure img {
+  width: 100%;
+  height: auto;
 }
 
+/* Article content headings - h1 is omitted: the increment-headings plugin
+   in .eleventy.js always bumps markdown headings up one level inside this
+   layout (so a `# Heading` renders as h2), keeping the page to one real h1
+   in .article-header. */
 .article-body h2 {
   font-size: 1.9375rem; /* ~27px at the 14px root */
   line-height: 1.3;
@@ -345,7 +456,7 @@ body > footer a:hover {
 
 .article-body img,
 .article-body pre {
-  border-radius: 0.5rem;
+  border-radius: var(--radius);
 }
 
 .article-body figcaption {
@@ -356,8 +467,8 @@ body > footer a:hover {
 /* Inline code gets a pill treatment; reset it back to plain for code that's
    already inside a highlighted code block */
 .article-body code {
-  background: oklch(0 0 0 / 0.08);
-  border-radius: 0.3em;
+  background: var(--color-overlay-weak);
+  border-radius: var(--radius-sm);
   padding: 0.15em 0.4em;
   font-size: 0.85em;
 }
@@ -369,18 +480,39 @@ body > footer a:hover {
   font-size: inherit;
 }
 
-/* Higher-specificity selectors needed to win over the Prism theme's own
-   margin/background on pre[class*="language-"] */
+/* pre[class] is included alongside plain pre for specificity: it's needed
+   to win over the Prism theme's own margin/background on
+   pre[class*="language-"], but a fenced block with no language (e.g. a
+   pasted man page) has no class at all and needs the bare `pre` selector
+   to get the same treatment. */
+.article-body pre,
 .article-body pre[class] {
   margin: 0 0 1.5rem 0;
-  background: oklch(0.22 0.05 325 / 1);
+  padding: var(--space-box);
+  background: var(--color-code-bg);
+  /* Split from the Prism theme's `overflow: auto` — that combination clips
+     the bottom corners but not the top ones in Chromium. */
+  overflow-x: auto;
+  overflow-y: hidden;
 }
 
-.article-body blockquote {
-  background: oklch(0.96 0.015 325 / 1);
-  border-radius: 0.5rem;
-  padding: 1.25rem;
+/* Unhighlighted blocks (no fence language) get no Prism theme colors at
+   all, so they'd otherwise inherit .article-body's dark text color onto
+   --color-code-bg's dark background and be illegible. */
+.article-body pre:not([class]) {
+  color: var(--color-code-text);
+}
+
+.article-body blockquote,
+.article-series {
+  background: var(--color-surface-alt);
+  border-radius: var(--radius);
+  padding: var(--space-box);
   margin: 0 0 1.5rem 0;
+}
+
+.article-series-label {
+  margin-bottom: 0.5rem;
 }
 
 .article-body blockquote p + p {
@@ -388,6 +520,37 @@ body > footer a:hover {
 }
 
 .article-body blockquote blockquote {
-  background: oklch(0 0 0 / 0.04);
+  background: var(--color-overlay-faint);
   margin: 1rem 0 0 0;
+}
+
+/* The rounding/border/padding live on the wrapper div (see table_open/
+   table_close in .eleventy.js); the table itself stays square-cornered
+   since the outermost cell borders already read as its edge. */
+.article-body > .table-wrapper {
+  margin-bottom: 1.5rem;
+  padding: var(--space-box);
+  background: var(--color-surface-alt);
+  border: 1px solid var(--color-overlay-weak);
+  border-radius: var(--radius);
+}
+
+.article-body table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 1.125rem;
+  line-height: 1.6;
+}
+
+.article-body th,
+.article-body td {
+  border: 1px solid var(--color-overlay-weak);
+  padding: 0.5rem 0.75rem;
+  text-align: left;
+}
+
+.article-body thead th {
+  background: var(--color-overlay-faint);
+  color: var(--color-text-strong);
+  font-weight: 600;
 }

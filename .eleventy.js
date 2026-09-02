@@ -40,6 +40,14 @@ export default function (eleventyConfig) {
 
   const md = markdownIt(markdownItOptions);
   md.use(incrementHeadingsPlugin);
+
+  // Wrap tables in a div so they can have their own bordered/rounded block
+  // treatment, matching the code block and blockquote styling.
+  md.renderer.rules.table_open = (tokens, idx, options, env, self) =>
+    '<div class="table-wrapper">' + self.renderToken(tokens, idx, options, env);
+  md.renderer.rules.table_close = (tokens, idx, options, env, self) =>
+    self.renderToken(tokens, idx, options, env) + '</div>';
+
   eleventyConfig.setLibrary("md", md);
 
   eleventyConfig.addCollection("experience", (collectionApi) => {
@@ -51,6 +59,16 @@ export default function (eleventyConfig) {
   eleventyConfig.addCollection("articles", (collectionApi) => {
     return collectionApi.getFilteredByGlob("src/20**/**/*.md")
       .sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime());
+  });
+
+  // Given collections.articles and a `series` front-matter value, returns
+  // the matching posts in reading order (oldest/part-one first) — the
+  // reverse of the articles collection's own newest-first sort.
+  eleventyConfig.addFilter("bySeries", (articles, series) => {
+    if (!series) return [];
+    return articles
+      .filter((article) => article.data.series === series)
+      .sort((a, b) => new Date(a.data.date).getTime() - new Date(b.data.date).getTime());
   });
 
   eleventyConfig.addFilter("formatDate", (dt) => {

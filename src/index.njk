@@ -1,5 +1,10 @@
 ---
 layout: main
+pagination:
+  data: collections.articles
+  size: 6
+  alias: articles
+permalink: "{% if pagination.pageNumber == 0 %}/{% else %}/page/{{ pagination.pageNumber + 1 }}/{% endif %}"
 ---
 
 <section class="hero">
@@ -7,7 +12,7 @@ layout: main
 </section>
 
 <div class="article-grid">
-  {% for article in collections.articles %}
+  {% for article in articles %}
     <article class="article-card">
       <a href="{{ article.url }}" class="article-card-link">
         <div class="article-card-image-container">
@@ -21,3 +26,31 @@ layout: main
     </article>
   {% endfor %}
 </div>
+
+{% if pagination.hrefs.length > 1 %}
+<nav class="pagination" aria-label="Article pagination">
+  {% if pagination.href.previous %}
+    <a href="{{ pagination.href.previous }}" class="pagination-link pagination-prev" aria-label="Newer articles">&larr;</a>
+  {% else %}
+    <span class="pagination-link pagination-prev is-hidden" aria-hidden="true">&larr;</span>
+  {% endif %}
+
+  <ol class="pagination-pages">
+    {% for href in pagination.hrefs %}
+      <li>
+        {% if loop.index0 == pagination.pageNumber %}
+          <span class="pagination-page is-current" aria-current="page">{{ loop.index }}</span>
+        {% else %}
+          <a href="{{ href }}" class="pagination-page">{{ loop.index }}</a>
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ol>
+
+  {% if pagination.href.next %}
+    <a href="{{ pagination.href.next }}" class="pagination-link pagination-next" aria-label="Older articles">&rarr;</a>
+  {% else %}
+    <span class="pagination-link pagination-next is-hidden" aria-hidden="true">&rarr;</span>
+  {% endif %}
+</nav>
+{% endif %}

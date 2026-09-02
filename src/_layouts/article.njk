@@ -2,13 +2,23 @@
 layout: main
 ---
 
+{% set seriesArticles = collections.articles | bySeries(series) %}
 <article>
-  <div class="article-hero">
-    <img src="/assets/images/cover/{{ cover }}" alt="{{ title }}" />
-    <div class="article-hero-overlay">
-      <h1>{{ title }}</h1>
-      <time datetime="{{ date }}">{{ date | formatDate }}</time>
-    </div>
+  <header class="article-header">
+    <h1>{{ title }}</h1>
+    <time datetime="{{ date }}">{{ date | formatDate }}</time>
+  </header>
+  <div class="article-body">
+    {% if seriesArticles.length %}
+      <div class="article-series">
+        <p class="article-series-label">More in this series</p>
+        <ol>
+          {% for seriesArticle in seriesArticles %}
+            <li><a href="{{ seriesArticle.url }}">{{ seriesArticle.data.title }}</a></li>
+          {% endfor %}
+        </ol>
+      </div>
+    {% endif %}
+    {{ content | safe }}
   </div>
-  <div class="article-body">{{ content | safe }}</div>
 </article>
